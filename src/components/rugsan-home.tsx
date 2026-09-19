@@ -34,7 +34,7 @@ function BrandMark({ compact = false }: { compact?: boolean }) {
   return <a href="#home" className={`brand-mark ${compact ? "compact" : ""}`} aria-label="Rugsan home"><img src={logoAsset.url} alt="Rugsan Construction Company" /></a>;
 }
 
-function HeroTitle({ language, title }: { language: Language; title: string }) {
+function HeroTitle({ title }: { title: string }) {
   const comma = title.indexOf(",");
   if (comma < 0) return <h1><span>{title}</span></h1>;
   return <h1><span>{title.slice(0, comma + 1)}</span><span>{title.slice(comma + 1).trim()}</span></h1>;
@@ -119,7 +119,7 @@ export function RugsanHome() {
       <section id="home" className="hero">
         <img src={heroImage} alt="Rugsan residential architectural design" fetchPriority="high" />
         <div className="hero-overlay" />
-        <div className="container hero-content"><p className="eyebrow hero-kicker">{copy.heroEyebrow}</p><HeroTitle language={language} title={copy.heroTitle} /><p className="hero-copy">{copy.heroBody}</p><div className="hero-buttons"><Button variant="hero" size="xl" onClick={() => go("projects")}>{copy.projectsCta}<ArrowRight /></Button><Button variant="heroOutline" size="xl" onClick={() => go("contact")}>{copy.consultCta}</Button></div></div>
+        <div className="container hero-content"><p className="eyebrow hero-kicker">{copy.heroEyebrow}</p><HeroTitle title={copy.heroTitle} /><p className="hero-copy">{copy.heroBody}</p><div className="hero-buttons"><Button variant="hero" size="xl" onClick={() => go("projects")}>{copy.projectsCta}<ArrowRight /></Button><Button variant="heroOutline" size="xl" onClick={() => go("contact")}>{copy.consultCta}</Button></div></div>
         <button className="scroll-indicator" onClick={() => go("about")}><span>{copy.scroll}</span><ArrowDown /></button>
       </section>
 
