@@ -31,7 +31,7 @@ function LanguageSwitch({ language, onChange }: { language: Language; onChange: 
 }
 
 function BrandMark({ compact = false }: { compact?: boolean }) {
-  return <a href="#home" className={`brand-mark ${compact ? "compact" : ""}`} aria-label="Rugsan home"><img src={logoAsset.url} alt="Rugsan Construction Company" /></a>;
+  return <a href="#home" className={`brand-mark ${compact ? "compact" : ""}`} aria-label="Rugsan home"><img src={logoAsset.url} alt="Rugsan Construction Company" decoding="async" /></a>;
 }
 
 function HeroTitle({ title }: { title: string }) {
@@ -117,7 +117,7 @@ export function RugsanHome() {
 
     <main>
       <section id="home" className="hero">
-        <img src={heroImage} alt="Rugsan residential architectural design" fetchPriority="high" />
+        <img src={heroImage} alt="Rugsan residential architectural design" fetchPriority="high" decoding="async" />
         <div className="hero-overlay" />
         <div className="container hero-content"><p className="eyebrow hero-kicker">{copy.heroEyebrow}</p><HeroTitle title={copy.heroTitle} /><p className="hero-copy">{copy.heroBody}</p><div className="hero-buttons"><Button variant="hero" size="xl" onClick={() => go("projects")}>{copy.projectsCta}<ArrowRight /></Button><Button variant="heroOutline" size="xl" onClick={() => go("contact")}>{copy.consultCta}</Button></div></div>
         <button className="scroll-indicator" onClick={() => go("about")}><span>{copy.scroll}</span><ArrowDown /></button>
@@ -125,20 +125,20 @@ export function RugsanHome() {
 
       <section id="about" className="section about-section"><div className="container about-grid">
         <Reveal className="about-copy"><p className="eyebrow">{copy.aboutLabel}</p><h2>{copy.aboutTitle}</h2><p className="lead">{copy.aboutBody}</p><div className="value-grid">{copy.aboutPoints.map((point, i) => <div key={point}><span>0{i + 1}</span>{point}</div>)}</div><Button variant="text" onClick={() => go("contact")}>{copy.learn}<ArrowRight /></Button></Reveal>
-        <Reveal className="about-image"><img src={brandImage} alt="Rugsan architecture, interior design and civil engineering presentation" loading="lazy" /><span>R / 01</span></Reveal>
+        <Reveal className="about-image"><img src={brandImage} alt="Rugsan architecture, interior design and civil engineering presentation" loading="lazy" decoding="async" /><span>R / 01</span></Reveal>
       </div></section>
 
-      <section id="services" className="section services-section"><div className="container"><Reveal><p className="eyebrow">{copy.servicesLabel}</p><div className="section-heading"><h2>{copy.servicesTitle}</h2><span>01 — 03</span></div></Reveal><div className="services-grid">{services.map((service, index) => <Reveal className="service-card" key={service.key}><div className="service-image"><img src={serviceImages[index]} alt="" loading="lazy" /><span>{service.number}</span></div><div className="service-body"><h3>{copy.serviceNames[service.key]}</h3><p>{copy.serviceDescriptions[service.key]}</p><ul>{service.items.map((item) => <li key={item}><Check />{item}</li>)}</ul><button type="button" onClick={() => go("contact")}>{copy.explore}<ArrowRight /></button></div></Reveal>)}</div></div></section>
+      <section id="services" className="section services-section"><div className="container"><Reveal><p className="eyebrow">{copy.servicesLabel}</p><div className="section-heading"><h2>{copy.servicesTitle}</h2><span>01 — 03</span></div></Reveal><div className="services-grid">{services.map((service, index) => <Reveal className="service-card" key={service.key}><div className="service-image"><img src={serviceImages[index]} alt="" loading="lazy" decoding="async" /><span>{service.number}</span></div><div className="service-body"><h3>{copy.serviceNames[service.key]}</h3><p>{copy.serviceDescriptions[service.key]}</p><ul>{service.items.map((item) => <li key={item}><Check />{item}</li>)}</ul><button type="button" onClick={() => go("contact")}>{copy.explore}<ArrowRight /></button></div></Reveal>)}</div></div></section>
 
-      <section id="projects" className="section projects-section"><div className="container"><Reveal><p className="eyebrow">{copy.projectsLabel}</p><div className="section-heading"><h2>{copy.projectsTitle}</h2></div></Reveal><div className="projects-grid">{projectImages.map((image, item) => <Reveal className={`project-card project-${item + 1}`} key={image}><button type="button" onClick={() => go("contact")} aria-label={`${copy.projectsLearn}: ${copy.projectTitles[item]}`}><img src={image} alt={copy.projectTitles[item]} loading="lazy" /><span className="project-shade"/><span className="project-caption"><small>{copy.categories[item]}</small><strong>{copy.projectTitles[item]}</strong><span className="project-link">{copy.projectsLearn}<ArrowRight /></span></span></button></Reveal>)}</div></div></section>
+      <section id="projects" className="section projects-section"><div className="container"><Reveal><p className="eyebrow">{copy.projectsLabel}</p><div className="section-heading"><h2>{copy.projectsTitle}</h2></div></Reveal><div className="projects-grid">{projectImages.map((image, item) => <Reveal className={`project-card project-${item + 1}`} key={image}><button type="button" onClick={() => go("contact")} aria-label={`${copy.projectsLearn}: ${copy.projectTitles[item]}`}><img src={image} alt={copy.projectTitles[item]} loading="lazy" decoding="async" /><span className="project-shade"/><span className="project-caption"><small>{copy.categories[item]}</small><strong>{copy.projectTitles[item]}</strong><span className="project-link">{copy.projectsLearn}<ArrowRight /></span></span></button></Reveal>)}</div></div></section>
 
       <section className="section why-section"><div className="container why-grid"><Reveal><p className="eyebrow">{copy.whyLabel}</p><h2>{copy.whyTitle}</h2></Reveal><div className="reasons">{copy.reasons.map((reason, i) => { const Icon = reasonIcons[i] ?? Building2; return <Reveal className="reason" key={reason[0]}><span className="reason-icon"><Icon aria-hidden="true" /></span><div><h3>{reason[0]}</h3><p>{reason[1]}</p></div></Reveal>; })}</div></div></section>
 
       <section className="section process-section"><div className="container"><Reveal><p className="eyebrow">{copy.processLabel}</p><h2>{copy.processTitle}</h2></Reveal><div className="process-grid">{copy.process.map((step, i) => { const Icon = processIcons[i] ?? HardHat; return <Reveal className="process-step" key={step[0]}><span className="process-icon"><Icon aria-hidden="true" /></span><h3>{step[0]}</h3><p>{step[1]}</p></Reveal>; })}</div></div></section>
 
-      <section className="mission-section"><img src={missionImage} alt="Rugsan architectural project" loading="lazy" /><div className="mission-overlay"/><Reveal className="container mission-content"><p className="eyebrow">{copy.missionLabel}</p><h2>{copy.missionTitle}</h2><p>{copy.missionBody}</p></Reveal></section>
+      <section className="mission-section"><img src={missionImage} alt="Rugsan architectural project" loading="lazy" decoding="async" /><div className="mission-overlay"/><Reveal className="container mission-content"><p className="eyebrow">{copy.missionLabel}</p><h2>{copy.missionTitle}</h2><p>{copy.missionBody}</p></Reveal></section>
 
-      <section id="founder" className="section founder-section"><div className="container founder-grid"><Reveal className="founder-image"><img src={founderAsset.url} alt={copy.founderTitle} loading="lazy" /></Reveal><Reveal className="founder-copy"><p className="eyebrow">{copy.founderLabel}</p><h2>{copy.founderTitle}</h2><h3>{copy.founderRole}</h3><p>{copy.founderBody}</p></Reveal></div></section>
+      <section id="founder" className="section founder-section"><div className="container founder-grid"><Reveal className="founder-image"><img src={founderAsset.url} alt={copy.founderTitle} loading="lazy" decoding="async" /></Reveal><Reveal className="founder-copy"><p className="eyebrow">{copy.founderLabel}</p><h2>{copy.founderTitle}</h2><h3>{copy.founderRole}</h3><p>{copy.founderBody}</p></Reveal></div></section>
 
       <section className="cta-section"><div className="cta-glow"/><Reveal className="container cta-inner"><div><p className="eyebrow">RUGSAN</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaBody}</p></div><div><Button variant="hero" size="xl" onClick={() => go("contact")}>{copy.consultCta}<ArrowRight /></Button><Button variant="heroOutline" size="xl" asChild><a href="tel:+252615969854"><Phone />{copy.call}</a></Button></div></Reveal></section>
 
