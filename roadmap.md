@@ -6,6 +6,6 @@
 - [x] Verify desktop, tablet, mobile, languages, and form flow
 
 ## Rugsan visual system refinement
-- [ ] Refine global hierarchy, spacing, controls, and focus states
-- [ ] Polish independent media proportions across breakpoints
-- [ ] Verify hero wrapping, RTL, interactions, and mobile overflow
+- [x] Refine global hierarchy, spacing, controls, and focus states
+- [x] Polish independent media proportions across breakpoints
+- [x] Verify hero wrapping, RTL, interactions, and mobile overflow
