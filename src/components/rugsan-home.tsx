@@ -26,7 +26,7 @@ function BrandMark({ compact = false }: { compact?: boolean }) {
 function HeroTitle({ title }: { title: string }) {
   const comma = title.indexOf(",");
   if (comma < 0) return <h1><span>{title}</span></h1>;
-  return <h1><span>{title.slice(0, comma + 1)}</span><span>{title.slice(comma + 1).trim()}</span></h1>;
+  return <h1><span>{title.slice(0, comma + 1)} </span><span>{title.slice(comma + 1).trim()}</span></h1>;
 }
 
 function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
