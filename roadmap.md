@@ -9,3 +9,9 @@
 - [x] Refine global hierarchy, spacing, controls, and focus states
 - [x] Polish independent media proportions across breakpoints
 - [x] Verify hero wrapping, RTL, interactions, and mobile overflow
+
+## Rugsan architectural polish
+- [ ] Standardize the editorial typography and responsive spacing system
+- [ ] Centralize independent media behavior without changing content
+- [ ] Preserve and visually integrate the existing AI Advisor
+- [ ] Verify desktop, tablet, mobile, RTL, images, and interactions
